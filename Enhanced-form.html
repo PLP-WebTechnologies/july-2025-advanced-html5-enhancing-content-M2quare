@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Content & Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      max-width: 900px;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    table, th, td {
+      border: 1px solid #666;
+    }
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 0.3rem;
+      vertical-align: middle;
+    }
+    .inline-label {
+      display: inline-block;
+      margin-right: 1.5rem;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    audio {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Enhanced HTML5 Content & Form</h1>
+  <p>A demonstration of lists, tables, media, and a fully validated HTML5 form.</p>
+</header>
+
+<main>
+
+  <!-- Section with lists -->
+  <section id="interesting-facts">
+    <h2>Interesting Nature Facts</h2>
+    <p>Here are some fascinating facts organized as lists:</p>
+
+    <h3>Did You Know? (Unordered List)</h3>
+    <ul>
+      <li>Honey never spoils and can last thousands of years.</li>
+      <li>Octopuses have three hearts and blue blood.</li>
+      <li>Bananas are berries, but strawberries aren't.</li>
+    </ul>
+
+    <h3>Top 3 Largest Animals (Ordered List)</h3>
+    <ol>
+      <li>Blue Whale</li>
+      <li>African Elephant</li>
+      <li>Colossal Squid</li>
+    </ol>
+  </section>
+
+  <!-- Section with table -->
+  <section id="animal-table">
+    <h2>Animal Characteristics Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Animal</th>
+          <th>Average Lifespan (years)</th>
+          <th>Habitat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Blue Whale</td>
+          <td>70-90</td>
+          <td>Ocean</td>
+        </tr>
+        <tr>
+          <td>African Elephant</td>
+          <td>60-70</td>
+          <td>Savannah</td>
+        </tr>
+        <tr>
+          <td>Colossal Squid</td>
+          <td>Unknown</td>
+          <td>Deep Ocean</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section with media -->
+  <section id="media-content">
+    <h2>Media Examples</h2>
+
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Blue_Whale_2.jpg" alt="Blue Whale swimming in the ocean" />
+      <figcaption>Blue Whale, the largest animal on Earth.</figcaption>
+    </figure>
+
+    <figure>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <figcaption>Sample Audio: Relaxing ocean waves.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Section with form -->
+  <section id="contact-form">
+    <h2>Contact & Registration Form</h2>
+    <form action="#" method="post" autocomplete="on" novalidate>
+
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullname">Full Name <span aria-label="required">*</span></label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          required
+          minlength="3"
+          maxlength="50"
+          placeholder="John Doe"
+          autocomplete="name"
+        />
+
+        <label for="email">Email Address <span aria-label="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="example@mail.com"
+          autocomplete="email"
+        />
+
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="^\d{10,15}$"
+          placeholder="1234567890"
+          autocomplete="tel"
+        />
+        <small>Enter 10 to 15 digits only.</small>
+
+        <label for="dob">Date of Birth <span aria-label="required">*</span></label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          required
+          max="2025-12-31"
+        />
+      </fieldset>
+
+      <!-- Account Details -->
+      <fieldset>
+        <legend>Account Details</legend>
+
+        <label for="username">Username <span aria-label="required">*</span></label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          minlength="5"
+          maxlength="15"
+          placeholder="Choose a username"
+          autocomplete="username"
+        />
+
+        <label for="password">Password <span aria-label="required">*</span></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+          placeholder="At least 8 characters"
+          autocomplete="new-password"
+        />
+
+        <label for="confirm-password">Confirm Password <span aria-label="required">*</span></label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+          minlength="8"
+          placeholder="Repeat your password"
+          autocomplete="new-password"
+        />
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <span>Gender <span aria-label="required">*</span></span>
+        <div>
+          <label class="inline-label" for="gender-male">
+            <input type="radio" id="gender-male" name="gender" value="male" required />
+            Male
+          </label>
+
+          <label class="inline-label" for="gender-female">
+            <input type="radio" id="gender-female" name="gender" value="female" />
+            Female
+          </label>
+
+          <label class="inline-label" for="gender-other">
+            <input type="radio" id="gender-other" name="gender" value="other" />
+            Other
+          </label>
+        </div>
+
+        <label for="newsletter">
+          <input type="checkbox" id="newsletter" name="newsletter" />
+          Subscribe to Newsletter
+        </label>
+
+        <label for="country">Country <span aria-label="required">*</span></label>
+        <select id="country" name="country" required autocomplete="country-name">
+          <option value="" disabled selected>Select your country</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="usa">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="canada">Canada</option>
+          <option value="australia">Australia</option>
+        </select>
+
+        <label for="bio">Short Bio</label>
+        <textarea
+          id="bio"
+          name="bio"
+          maxlength="300"
+          rows="4"
+          placeholder="Tell us something about yourself..."
+          autocomplete="off"
+        ></textarea>
+      </fieldset>
+
+      <!-- Readonly example -->
+      <fieldset>
+        <legend>Reference Code</legend>
+        <label for="refcode">Your Reference Code</label>
+        <input
+          type="text"
+          id="refcode"
+          name="refcode"
+          value="REF2025XYZ"
+          readonly
+          tabindex="-1"
+        />
+      </fieldset>
+
+      <input type="submit" value="Submit Form" />
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Enhanced HTML5 Assignment</p>
+</footer>
+
+</body>
+</html>
